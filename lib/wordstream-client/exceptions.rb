@@ -4,10 +4,19 @@ module WordstreamClient
 
   class AuthError < WordstreamClientError
 
-    def initialize(message) # :nodoc:
-      super "WordstreamClient::Auth.login - #{message}"
+    def initialize(method, message) # :nodoc:
+      super "WordstreamClient::Auth.#{method} - #{message}"
     end
 
   end
+
+  class KeywordToolError < WordstreamClientError
+
+    def initialize(method, message) # :nodoc:
+      super "WordstreamClient::KeywordTool.#{method} - #{message}"
+    end
+
+  end
+  
 
 end

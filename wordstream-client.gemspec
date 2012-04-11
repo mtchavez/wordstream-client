@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description      = "Wraps Wordstream API calls in a gem."
   s.authors          = ['Chavez']
   s.email            = ''
-  s.files            = ['lib/wordstream-client.rb', 'lib/wordstream-client/config.rb', 'lib/wordstream-client/client.rb', 'lib/wordstream-client/exceptions.rb', 'lib/wordstream-client/auth.rb']
+  s.files            = ['lib/wordstream-client.rb', 'lib/wordstream-client/config.rb', 'lib/wordstream-client/client.rb', 'lib/wordstream-client/exceptions.rb', 'lib/wordstream-client/auth.rb', 'lib/wordstream-client/keyword_tool.rb']
   s.require_paths    = ['lib']
   s.homepage         = 'http://github.com/mtchavez/wordstream-client'
   s.rdoc_options     = ['--charset=UTF-8 --main=README.md']

@@ -18,6 +18,10 @@ module WordstreamClient
       Auth.new @config
     end
 
+    def keyword_tool(keywords)
+      KeywordTool.new @config, keywords
+    end
+
   end
 
 end

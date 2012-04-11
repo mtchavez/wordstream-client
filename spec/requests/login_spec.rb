@@ -22,17 +22,7 @@ describe 'Wordstream Login' do
       use_vcr_cassette 'login/valid_creds/bad_json', :record => :none
 
       it 'raises login error' do
-        expect { login }.should raise_error(WordstreamClient::AuthError, /Bad response from Wordstream when trying to log in/)
-      end
-
-    end
-
-    context 'bad callback' do
-
-      use_vcr_cassette 'login/valid_creds/bad_callback', :record => :none
-
-      it 'raises login error' do
-        expect { login }.should raise_error(WordstreamClient::AuthError, /Bad response from Wordstream when trying to log in/)
+        expect { login }.should raise_error(WordstreamClient::AuthError, /Bad response from Wordstream when trying to login/)
       end
 
     end

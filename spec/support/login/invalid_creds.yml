@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.wordstream.com/authentication/login?callback=response&password=bad_password&username=bad_username
+    uri: http://api.wordstream.com/authentication/login?password=bad_password&username=bad_username
     body:
       encoding: US-ASCII
       string: ''
@@ -30,9 +30,9 @@ http_interactions:
       - text/html; charset=UTF-8
     body:
       encoding: US-ASCII
-      string: ! 'response({"code": "ERROR", "data": {"session_id": ":"}, "error":
+      string: ! '{"code": "ERROR", "data": {"session_id": ":"}, "error":
         "Invalid username or password. Forgot your password? Please click <a href=\"/forgot-password\">here</a>
-        to reset your password."})'
+        to reset your password."}'
     http_version: 
   recorded_at: Tue, 10 Apr 2012 03:45:50 GMT
 recorded_with: VCR 2.0.1
