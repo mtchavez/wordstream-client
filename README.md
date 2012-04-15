@@ -5,16 +5,12 @@ A wrapper around the Wordstream API calls.
 * [Github](http://github.com/mtchavez/wordstream-client "Github Repo")
 * [Rubygems](http://rubygems.org/mtchavez/wordstream-client "Rubygems Page")
 
----
-
 ## Disclaimer
 
 The Wordstream API is constructed very poorly in my personal opinion. In addition to this I have had issues with it's
 reliability and usability. I take no responsibility for you using their service and I advise you use them 
 **at your own risk**. This library was written due to the lack of libraries for Ruby and due to the only one out there does
 not look maintained nor does it implement all the current endpoints available.
-
----
 
 ## Description
 
