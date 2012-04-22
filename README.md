@@ -82,6 +82,21 @@ is not implemented on any of the endpoints. This may change in the future if it 
 
     keywords = %w[running apple ipod ipad race triathlon]
     data     = WordstreamClient::KeywordTool.get_niches(keywords)
+    
+    # keyword_index refers to the array position in the 'keywords' dict element.
+    {
+      'total': number_of_suggestions,
+      'groupings': [
+        {
+          'title': display_label, 
+          'score': score, 
+          'wordlist': [query_word, ... , query_word], 
+          'matches': [keyword_index, ... , keyword_index]
+        }
+      ], 
+      'keywords': [ [keyword, relative_volume], ... , [keyword, relative_volume] ]
+    }
+    
 
 ### Suggestions
 
