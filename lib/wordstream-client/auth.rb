@@ -6,6 +6,15 @@ module WordstreamClient
       @config = config
     end
 
+    def self.clear_session
+      Config.session_id = nil
+    end
+
+    def clear_session
+      self.class.clear_session
+      @config.session_id = nil if @config
+    end
+
     def self.login
       Config.client.auth.login
     end
@@ -41,12 +50,13 @@ module WordstreamClient
 
       raise AuthError.new('logout', data['error']) if data.has_key?('error')
 
-      Config.session_id  = nil
-      @config.session_id = nil
+      clear_session
 
       return data
     rescue JSON::ParserError => e
       raise AuthError.new('logout', 'Bad response from Wordstream when trying to logout.')
+    ensure
+      clear_session
     end
 
     def self.get_api_credits
@@ -59,7 +69,7 @@ module WordstreamClient
       resp  = RestClient.get(@config.default_host + path + query)
       data  = JSON.parse resp.body
 
-      raise AuthError.new('get_api_credits', data['error']) if data.has_key?('error')
+      raise AuthError.new('get_api_credits', data['detail']) if data['code'].match(/error/i)
 
       return data
     rescue JSON::ParserError => e

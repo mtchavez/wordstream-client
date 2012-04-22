@@ -33,7 +33,7 @@ module WordstreamClient
     end
 
     def session_id=(new_session)
-      return false if new_session.to_s.empty?
+      # return false if new_session.to_s.empty?
       instance_variable_set "@session_id", new_session
       self.class.session_id = new_session
     end

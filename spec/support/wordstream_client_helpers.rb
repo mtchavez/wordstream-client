@@ -9,4 +9,8 @@ module WordstreamClientHelpers
     WordstreamClient::Auth.login
   end
 
+  def logout
+    WordstreamClient::Auth.logout
+  end
+
 end

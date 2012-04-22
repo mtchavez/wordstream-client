@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe WordstreamClient::Client do
 
+  let(:config) { WordstreamClient::Config.new }
+  let(:client) { WordstreamClient::Client.new(config) }
+
   describe 'initialize' do
 
     context 'with options hash' do
@@ -19,9 +22,6 @@ describe WordstreamClient::Client do
     end
 
     context 'with config object' do
-
-      let(:config) { WordstreamClient::Config.new }
-      let(:client) { WordstreamClient::Client.new(config) }
 
       it 'returns new client instance' do
         client.should be_an_instance_of(WordstreamClient::Client)
@@ -45,11 +45,16 @@ describe WordstreamClient::Client do
 
   describe 'auth' do
 
-    let(:config) { WordstreamClient::Config.new }
-    let(:client) { WordstreamClient::Client.new(config) }
-
     it 'returns new auth instance' do
       client.auth.should be_an_instance_of(WordstreamClient::Auth)
+    end
+
+  end
+
+  describe 'keyword tool' do
+
+    it 'returns new auth instance' do
+      client.keyword_tool([]).should be_an_instance_of(WordstreamClient::KeywordTool)
     end
 
   end
