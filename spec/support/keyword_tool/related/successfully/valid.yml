@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.wordstream.com/keywordtool/get_related_keywords?block_adult=false&max_niches=5&seeds=apple%0Aipad%0Amacbook%20p&session_id=user@example.com:m97ALqlCMcJDnWC8PN1l1sNt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 23 Apr 2012 03:57:40 GMT
+      Server:
+      - Apache/2.2.3 (CentOS)
+      Content-Length:
+      - '1366'
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"code": "OK", "data": ["mac os x", "learn and earn", "all around
+        my", "store for education", "the crazy ones", "mac os rumors", "rip mix burn",
+        "ipaq pocket pc", "will ferrell", "steve jobs", "will farrell", "os x", "developer
+        connection", "think different", "power book", "learning interchange", "mac
+        rumors", "steven jobs", "knowledge navigator", "digital hub", "think secret",
+        "jonathan ive", "i mac", "data quest", "crazy ones", "rescue raiders", "mac
+        rumor", "next byte", "megahertz myth", "real losers", "pocket pc", "hard reset",
+        "concurso publico", "com br", "ipaq 2210", "ipaq 4150", "ipaq 1940", "detran
+        pernambuco", "detran pe", "iphone", "macintosh", "titanium", "laptops", "applescript",
+        "mac", "applesauce", "apples", "rumors", "mackintosh", "orchards", "appleseed",
+        "versiontracker", "resellers", "parody", "keynote", "imovie", "superdrive",
+        "crabapple", "wallstreet", "macworld", "iphoto", "appleworks", "applewood",
+        "cider", "parodies", "crumble", "laserwriter", "schnapps", "powerpc", "martinis",
+        "applecare", "performa", "crisp", "spoof", "rumor", "manzana", "stylewriter",
+        "gravis", "appletalk", "wozniak", "clarisworks", "pismo", "strudel", "macs",
+        "appel", "garamond", "pectin", "altair", "applejacks", "applestore", "macally",
+        "macrumors", "hypercard", "appleshare", "powerlogix", "macos", "applemac",
+        "isync", "thinkdifferent", "carbonlib"]}'
+    http_version: 
+  recorded_at: Mon, 23 Apr 2012 03:57:41 GMT
+recorded_with: VCR 2.0.1

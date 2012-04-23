@@ -91,7 +91,7 @@ module WordstreamClient
     end
 
     def self.get_related(keywords, max = 100, block_adult = 'false')
-      Config.client.keyword_tool(keywords).get_questions(max, block_adult)
+      Config.client.keyword_tool(keywords).get_related(max, block_adult)
     end
 
     def get_related(max = 100, block_adult = 'false')

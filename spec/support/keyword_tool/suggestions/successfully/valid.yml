@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.wordstream.com/keywordtool/get_keywords?block_adult=false&max_niches=5&seeds=apple%0Aipad%0Amacbook%20p&session_id=user@example.com:m97ALqlCMcJDnWC8PN1l1sNt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 23 Apr 2012 03:27:48 GMT
+      Server:
+      - Apache/2.2.3 (CentOS)
+      Content-Length:
+      - '2644'
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"code": "OK", "data": [["apple", 196], ["ipad 2 cases", 95], ["apple
+        stock", 75], ["apple cider vinegar", 72], ["apple store", 69], ["apple computers",
+        69], ["apple juice", 68], ["apple vacations", 60], ["apple ipod", 60], ["apple
+        crisp recipe", 53], ["apple earnings", 52], ["case for ipad 2", 51], ["cases
+        for the ipad 2", 48], ["valley apple", 46], ["apple laptops", 42], ["apple
+        iphone", 42], ["vinegar apple", 39], ["silver apple", 39], ["jeans apple bottom",
+        39], ["apple bottom", 39], ["what is in apple juice", 38], ["stock of apple",
+        38], ["stock in apple", 38], ["stock for apple", 38], ["stock apple com",
+        38], ["apple apple juice", 38], ["tree apple", 36], ["cider apple", 36], ["apple
+        stock shares", 34], ["ipad best buy", 33], ["apple pie", 33], ["apple jeans",
+        33], ["recipes for apple crisp", 31], ["recipe apple", 31], ["ipad charger",
+        31], ["apple osx tiger icons", 31], ["apple airport express", 31], ["wikipedia
+        apple", 29], ["green apple", 28], ["apple charger", 28], ["ipad 2 best buy",
+        26], ["fiona apple", 26], ["big apple", 26], ["wikipedia ipad", 25], ["keyboard
+        case for ipad 2", 25], ["ipad 2 keyboard case", 25], ["ipad 2 case with keyboard",
+        25], ["ipad 2 case and keyboard", 25], ["ipad 2 best cases", 25], ["best cases
+        for ipad 2", 25], ["pie recipe apple", 24], ["stocks on apple", 23], ["leather
+        ipad 2 case", 23], ["leather case for ipad 2", 23], ["cider from apple juice",
+        23], ["cider apple juice", 23], ["apple talk", 23], ["apple juice apple cider",
+        23], ["apple juice and apple cider", 23], ["apple cider or apple juice", 23],
+        ["apple cider from apple juice", 23], ["walmart ipad", 22], ["target ipad",
+        22], ["stock price of apple", 22], ["stock price for apple", 22], ["stock
+        price apple", 22], ["red apple", 22], ["price of stock for apple", 22], ["ipad
+        at target", 22], ["ipad 2 cover case", 22], ["apple lyrics", 22], ["apple
+        stocks and shares", 21], ["apple itunes", 21], ["apple federal credit union",
+        21], ["apple crisp", 21], ["value of apple stock", 20], ["stock quote for
+        apple", 20], ["stock quote apple", 20], ["pie crust for apple pie", 20], ["ipad
+        2 case review", 20], ["how to can apple juice", 20], ["crystal apple", 20],
+        ["can apple juice", 20], ["apple trailers", 20], ["apple stock value", 20],
+        ["apple stock share price", 20], ["apple stock price quote", 20], ["apple
+        pie crust", 20], ["apple picking", 20], ["apple ipad 2 case", 20], ["apple
+        cinnamon", 20], ["stock market for apple", 19], ["stock market apple", 19],
+        ["orchard apple", 19], ["ipad", 19], ["beatles apple", 19], ["apple in the
+        stock market", 19], ["apple caramel", 19], ["apple cake", 19], ["make apple
+        juice", 18]]}'
+    http_version: 
+  recorded_at: Mon, 23 Apr 2012 03:27:48 GMT
+recorded_with: VCR 2.0.1

@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.wordstream.com/keywordtool/get_question_keywords?block_adult=false&max_niches=5&seeds=apple%0Aipad%0Amacbook%20p&session_id=user@example.com:m97ALqlCMcJDnWC8PN1l1sNt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 23 Apr 2012 03:42:53 GMT
+      Server:
+      - Apache/2.2.3 (CentOS)
+      Content-Length:
+      - '4099'
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"code": "OK", "data": [["what is in apple juice", 38], ["how to
+        can apple juice", 20], ["can apple juice", 20], ["why buy apple stock", 13],
+        ["where to buy apple stock", 13], ["what s in apple juice", 13], ["what is
+        apple juice concentrate", 13], ["how do i buy apple stock", 13], ["what is
+        apple stock today", 12], ["what is apple juice made of", 12], ["how is apple
+        juice made", 12], ["how much is apple juice", 11], ["does apple juice go bad",
+        10], ["kindle vs ipad", 9], ["is apple juice good for you", 9], ["how much
+        is stock in apple", 9], ["how much is apple stock", 9], ["cider vs apple juice",
+        9], ["apple juice vs apple cider", 9], ["who owns apple", 8], ["what is apple
+        stock worth", 8], ["will apple stock split", 7], ["when will apple stock split",
+        7], ["when does apple report earnings", 7], ["what kind of apple is in mrs
+        smith apple pie", 7], ["what is apple s stock price", 7], ["should i buy apple
+        stock", 7], ["is apple juice acidic", 7], ["how much do ipads really cost",
+        7], ["how much are apple stocks", 7], ["how many calories are in an apple",
+        7], ["how do i copy music onto my apple iphone from", 7], ["does apple juice
+        help with constipation", 7], ["does apple juice help constipation", 7], ["apples
+        are", 7], ["apple juice versus apple cider", 7], ["will crab apple trees grow
+        in shaded areas", 6], ["will canada drop the price of their apple 4 iphones",
+        6], ["will apple cider vinger help with a stomach flu", 6], ["will apple cider
+        vinegar hurt color highlights on my hair", 6], ["will a debarked apple tree
+        live", 6], ["why would apples fall from tree before ripe", 6], ["why is new
+        york called the big apple", 6], ["why is my apple quitting everytime i go
+        to youtube", 6], ["why get an ipad", 6], ["why do cows eat apple tree bark",
+        6], ["why an ipad", 6], ["who founded apple", 6], ["which is healthier banana
+        or apple", 6], ["which apple stores have iphone 4", 6], ["where to buy an
+        ipad", 6], ["where do you buy ipad", 6], ["when will the next generation of
+        ipads be released", 6], ["when a truckload of apples arrives at a packing
+        plant,", 6], ["what year did the apple iie debut for sale", 6], ["what video
+        does ipad use", 6], ["what to do with poor wifi signal, ipad", 6], ["what
+        time is the big apple circus on pbs", 6], ["what stock market does apple computer
+        stock trade on", 6], ["what service carrier has apple iphone", 6], ["what
+        is the rose apple tree", 6], ["what is more american than hotdogs, apple pie
+        and chevrolet", 6], ["what is ipad", 6], ["what is apple cider vinegar and
+        honey good for", 6], ["what is 3g ipad", 6], ["what i heard in the apple barrel",
+        6], ["what do i need to make the ipad 3g work", 6], ["what causes immature
+        peach drop apples peaches", 6], ["what causes immature fruit drop apples peaches",
+        6], ["what are the best aples to use for apple pie", 6], ["what allows the
+        new apple tv to stream itunes on", 6], ["viewsonic g-tablet vs ipad", 6],
+        ["to do ipad", 6], ["stock market does apple computer stock trade on", 6],
+        ["nook vs ipad", 6], ["list of species who eat apples", 6], ["list of invasive
+        species who eat apples", 6], ["laptop performance of apple vs windows", 6],
+        ["ituens could not back up ipad session could not be", 6], ["is the ipad worth
+        it", 6], ["is swype available for the ipad", 6], ["is apple stock a good buy",
+        6], ["is apple juice a monosaccharide", 6], ["is apple certification recognised
+        by authorities", 6], ["ipod can''t be used apple mobile device", 6], ["ipad
+        vs laptop", 6], ["how much does a 1b of apples cost", 6], ["how much does
+        a 1 b of apples cost", 6], ["how much are apple ipads", 6], ["how many calories
+        does a granny smith apple have", 6], ["how long does apple cider keep", 6],
+        ["how long do you cook apple sauce", 6], ["how does docusign work with the
+        ipad", 6], ["how does an ipad work", 6], ["how do you handle a bad apple in
+        the work", 6], ["how do you caramize apples", 6], ["how do i name my photo
+        albums on ipad photolibrary", 6], ["how do i convert apple to mp3", 6], ["how
+        do apples make bananas ripen faster than it would", 6], ["how can i see purchaces
+        in apple app store", 6]]}'
+    http_version: 
+  recorded_at: Mon, 23 Apr 2012 03:42:54 GMT
+recorded_with: VCR 2.0.1

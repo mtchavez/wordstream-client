@@ -82,17 +82,43 @@ describe WordstreamClient::KeywordTool do
 
     use_vcr_cassette 'auth/login/valid_creds/with_session_id', :record => :none
 
-    before do
-      set_config 'user@example.com', 'password'
-      login
-    end
+    before { set_config and login }
 
     context 'successfully' do
-      
+
+      use_vcr_cassette 'keyword_tool/niches/successfully/valid', :record => :none
+
+      it 'returns keyword niches' do
+        results = WordstreamClient::KeywordTool.get_niches(keywords, 5)
+        results.should be_an_instance_of(Hash)
+        results['keywords'].should be_an_instance_of(Array)
+        results['total'].should eql 5
+      end
+
     end
 
     context 'unsuccessfully' do
-      
+
+      describe 'with error' do
+
+        use_vcr_cassette 'keyword_tool/niches/unsuccessfully/with_error', :record => :none
+
+        it 'raises keyword tool error with error message' do
+          expect { WordstreamClient::KeywordTool.get_niches(keywords, 5) }.should raise_error(WordstreamClient::KeywordToolError, /session id is invalid/i)
+        end
+
+      end
+
+      describe 'with bad json' do
+
+        use_vcr_cassette 'keyword_tool/niches/unsuccessfully/bad_json', :record => :none
+
+        it 'raises keyword tool error' do
+          expect { WordstreamClient::KeywordTool.get_niches(keywords, 5) }.should raise_error(WordstreamClient::KeywordToolError, /bad response from wordstream/i)
+        end
+
+      end
+
     end
 
   end
@@ -101,17 +127,86 @@ describe WordstreamClient::KeywordTool do
 
     use_vcr_cassette 'auth/login/valid_creds/with_session_id', :record => :none
 
-    before do
-      set_config 'user@example.com', 'password'
-      login
-    end
+    before { set_config and login }
 
     context 'successfully' do
-      
+
+      use_vcr_cassette 'keyword_tool/suggestions/successfully/valid', :record => :none
+
+      it 'returns keyword niches' do
+        results = WordstreamClient::KeywordTool.get_suggestions(keywords, 5)
+        results.should be_an_instance_of(Array)
+        results.length.should eql 100
+      end
+
     end
 
     context 'unsuccessfully' do
-      
+
+      describe 'with error' do
+
+        use_vcr_cassette 'keyword_tool/suggestions/unsuccessfully/with_error', :record => :none
+
+        it 'raises keyword tool error with error message' do
+          expect { WordstreamClient::KeywordTool.get_suggestions(keywords, 5) }.should raise_error(WordstreamClient::KeywordToolError, /session id is invalid/i)
+        end
+
+      end
+
+      describe 'with bad json' do
+
+        use_vcr_cassette 'keyword_tool/suggestions/unsuccessfully/bad_json', :record => :none
+
+        it 'raises keyword tool error' do
+          expect { WordstreamClient::KeywordTool.get_suggestions(keywords, 5) }.should raise_error(WordstreamClient::KeywordToolError, /bad response from wordstream/i)
+        end
+
+      end
+
+    end
+
+  end
+
+  describe 'get_questions' do
+
+    use_vcr_cassette 'auth/login/valid_creds/with_session_id', :record => :none
+
+    before { set_config and login }
+
+    context 'successfully' do
+
+      use_vcr_cassette 'keyword_tool/questions/successfully/valid', :record => :none
+
+      it 'returns keyword niches' do
+        results = WordstreamClient::KeywordTool.get_questions(keywords, 5)
+        results.should be_an_instance_of(Array)
+        results.length.should eql 100
+      end
+
+    end
+
+    context 'unsuccessfully' do
+
+      describe 'with error' do
+
+        use_vcr_cassette 'keyword_tool/questions/unsuccessfully/with_error', :record => :none
+
+        it 'raises keyword tool error with error message' do
+          expect { WordstreamClient::KeywordTool.get_questions(keywords, 5) }.should raise_error(WordstreamClient::KeywordToolError, /session id is invalid/i)
+        end
+
+      end
+
+      describe 'with bad json' do
+
+        use_vcr_cassette 'keyword_tool/questions/unsuccessfully/bad_json', :record => :none
+
+        it 'raises keyword tool error' do
+          expect { WordstreamClient::KeywordTool.get_questions(keywords, 5) }.should raise_error(WordstreamClient::KeywordToolError, /bad response from wordstream/i)
+        end
+
+      end
+
     end
 
   end
@@ -120,17 +215,42 @@ describe WordstreamClient::KeywordTool do
 
     use_vcr_cassette 'auth/login/valid_creds/with_session_id', :record => :none
 
-    before do
-      set_config 'user@example.com', 'password'
-      login
-    end
+    before { set_config and login }
 
     context 'successfully' do
-      
+
+      use_vcr_cassette 'keyword_tool/related/successfully/valid', :record => :none
+
+      it 'returns keyword niches' do
+        results = WordstreamClient::KeywordTool.get_related(keywords, 5)
+        results.should be_an_instance_of(Array)
+        results.length.should eql 100
+      end
+
     end
 
     context 'unsuccessfully' do
-      
+
+      describe 'with error' do
+
+        use_vcr_cassette 'keyword_tool/related/unsuccessfully/with_error', :record => :none
+
+        it 'raises keyword tool error with error message' do
+          expect { WordstreamClient::KeywordTool.get_related(keywords, 5) }.should raise_error(WordstreamClient::KeywordToolError, /session id is invalid/i)
+        end
+
+      end
+
+      describe 'with bad json' do
+
+        use_vcr_cassette 'keyword_tool/related/unsuccessfully/bad_json', :record => :none
+
+        it 'raises keyword tool error' do
+          expect { WordstreamClient::KeywordTool.get_related(keywords, 5) }.should raise_error(WordstreamClient::KeywordToolError, /bad response from wordstream/i)
+        end
+
+      end
+
     end
 
   end
