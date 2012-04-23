@@ -3,7 +3,7 @@
 A wrapper around the Wordstream API calls.
 
 * [Github](http://github.com/mtchavez/wordstream-client "Github Repo")
-* [Rubygems](http://rubygems.org/mtchavez/wordstream-client "Rubygems Page")
+* [Rubygems](https://rubygems.org/gems/wordstream-client "Rubygems Page")
 
 ## Disclaimer
 
