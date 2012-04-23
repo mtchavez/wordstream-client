@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.wordstream.com/authentication/login?password=password&username=user@example.com
+    uri: http://api.wordstream.com/keywordtool/get_keyword_volumes?block_adult=false&keywords=apple%0Aipad%0Amacbook%20pro&session_id=user@example.com:m97ALqlCMcJDnWC8PN1l1sNt
     body:
       encoding: US-ASCII
       string: ''
@@ -19,19 +19,18 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 10 Apr 2012 03:56:02 GMT
+      - Mon, 23 Apr 2012 02:15:00 GMT
       Server:
       - Apache/2.2.3 (CentOS)
       Content-Length:
-      - '139'
+      - '61'
       Connection:
       - close
       Content-Type:
       - text/html; charset=UTF-8
     body:
       encoding: US-ASCII
-      string: ! '{"code": "OK", "data": {"session_id": "user@example.com:m97ALqlCMcJDnWC8PN1l1sNt"},
-        "user": "user@example.com"}'
+      string: ! '{"code": "OK", "data": [["apple", 196], ["macbook pro", 23]]}'
     http_version: 
-  recorded_at: Tue, 10 Apr 2012 03:56:02 GMT
+  recorded_at: Mon, 23 Apr 2012 02:15:03 GMT
 recorded_with: VCR 2.0.1

@@ -4,13 +4,13 @@ module WordstreamClient
 
     attr_accessor :keywords
 
-    def initialize(config, keywords)
+    def initialize(config, keywords = [])
       @config   = config
       @keywords = keywords.is_a?(Array) ? keywords.join("\n") : keywords.to_s
       # Apache Web Server URL limit is 4000 characters
       # The API is horrible and passes ALL the keywords
       # In the URL string
-      @keywords = @keywords[0..3950]
+      @keywords = @keywords[0..3949]
     end
 
     def self.get_volumes(keywords, block_adult = 'false')
@@ -24,7 +24,7 @@ module WordstreamClient
       resp         = RestClient.get( @config.default_host + path + query )
       data         = JSON.parse resp.body
 
-      raise KeywordToolError.new('get_volumes', data['error']) if data.has_key?('error')
+      raise KeywordToolError.new('get_volumes', data['detail']) if data['code'].match(/error/i)
 
       return data['data']
     rescue JSON::ParserError => e
@@ -45,7 +45,7 @@ module WordstreamClient
 
       # TODO: Handle Error Code
       # "{\"code\": \"ERROR\", \"detail\": \"No keywords provided!!!\"}"
-      raise KeywordToolError.new('get_niches', data['error']) if data.has_key?('error')
+      raise KeywordToolError.new('get_niches', data['detail']) if data['code'].match(/error/i)
 
       return data['data']
     rescue JSON::ParserError => e
@@ -64,7 +64,7 @@ module WordstreamClient
       resp         = RestClient.get( @config.default_host + path + query )
       data         = JSON.parse resp.body
 
-      raise KeywordToolError.new('get_suggestions', data['error']) if data.has_key?('error')
+      raise KeywordToolError.new('get_suggestions', data['detail']) if data['code'].match(/error/i)
 
       return data['data']
     rescue JSON::ParserError => e
@@ -83,7 +83,7 @@ module WordstreamClient
       resp         = RestClient.get( @config.default_host + path + query )
       data         = JSON.parse resp.body
 
-      raise KeywordToolError.new('get_questions', data['error']) if data.has_key?('error')
+      raise KeywordToolError.new('get_questions', data['detail']) if data['code'].match(/error/i)
 
       return data['data']
     rescue JSON::ParserError => e
@@ -102,7 +102,7 @@ module WordstreamClient
       resp         = RestClient.get( @config.default_host + path + query )
       data         = JSON.parse resp.body
 
-      raise KeywordToolError.new('get_related', data['error']) if data.has_key?('error')
+      raise KeywordToolError.new('get_related', data['detail']) if data['code'].match(/error/i)
 
       return data['data']
     rescue JSON::ParserError => e
