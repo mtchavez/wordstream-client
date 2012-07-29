@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name              = 'wordstream_client'
+  s.name              = 'wordstream-client'
   s.version           = '0.0.2'
   s.date              = '2012-07-28'
   s.summary           = 'Wordstream API Wrapper'
