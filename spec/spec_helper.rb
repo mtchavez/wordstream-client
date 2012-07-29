@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 project_root = File.expand_path(File.dirname(__FILE__) + "/..")
 $LOAD_PATH << "#{project_root}/lib"
 

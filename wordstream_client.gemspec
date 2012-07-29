@@ -14,4 +14,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency(%q<rest-client>, ['>= 1.6.7'])
   s.add_development_dependency(%q<rspec>, ['>= 2.0'])
+  s.add_development_dependency(%q<simplecov>,)
 end
