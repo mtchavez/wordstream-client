@@ -20,13 +20,13 @@ is not implemented on any of the endpoints. This may change in the future if it 
 
 ## Install
 
-    gem install wordstream-client
+    gem install wordstream_client
 
 ## Setup
 
   To set up the gem you need to set your Wordstream username and password before making any API requests.
 
-    require 'wordstream-client'
+    require 'wordstream_client'
     
     WordstreamClient::Config.username = 'user@example.com'
     WordstreamClient::Config.password = 'password'

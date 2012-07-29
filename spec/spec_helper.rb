@@ -2,7 +2,7 @@ project_root = File.expand_path(File.dirname(__FILE__) + "/..")
 $LOAD_PATH << "#{project_root}/lib"
 
 require 'rubygems'
-require 'wordstream-client'
+require 'wordstream_client'
 require 'vcr'
 
 Dir[("#{project_root}/spec/support/**/*.rb")].each {|f| require f}
