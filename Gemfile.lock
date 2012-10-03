@@ -16,6 +16,7 @@ GEM
     pry-doc (0.4.1)
       pry (>= 0.9.0)
       yard (~> 0.7.4)
+    redcarpet (2.1.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.9.0)
@@ -44,6 +45,7 @@ DEPENDENCIES
   gemcutter
   pry
   pry-doc
+  redcarpet
   rest-client
   rspec
   simplecov

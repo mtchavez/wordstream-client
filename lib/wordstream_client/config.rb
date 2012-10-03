@@ -6,8 +6,11 @@ module WordstreamClient
       attr_accessor :username, :password, :session_id
     end
 
-    def self.instantiate # :nodoc:
-      new( username: username, password: password, session_id: session_id )
+    # Instantiate new instance
+    # @private
+
+    def self.instantiate
+      new( :username => username, :password => password, :session_id => session_id )
     end
 
     def self.client
@@ -33,7 +36,6 @@ module WordstreamClient
     end
 
     def session_id=(new_session)
-      # return false if new_session.to_s.empty?
       instance_variable_set "@session_id", new_session
       self.class.session_id = new_session
     end

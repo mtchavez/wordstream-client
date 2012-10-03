@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name              = 'wordstream_client'
-  s.version           = '0.0.3'
-  s.date              = '2012-07-28'
+  s.version           = '0.0.4'
+  s.date              = '2012-10-02'
   s.summary           = 'Wordstream API Wrapper'
   s.description       = 'Wraps Wordstream API calls in a gem.'
   s.authors           = ['Chavez']

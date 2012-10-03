@@ -1,0 +1,6 @@
+lib/wordstream_client.rb 66a409df18e0de74403c5c38bfe6bdcffc84c902
+lib/wordstream_client/auth.rb 817492ea4efcc39d6af3a60821148bc590ad737b
+lib/wordstream_client/config.rb 1fd349e12867a7632ffc19c4ae00b72484dfb1a6
+lib/wordstream_client/client.rb 171eaf793ac46e76cc45dd60407128a923cc983d
+lib/wordstream_client/exceptions.rb 64945e39c4544b4441f750f4fe7b1c9504c0406d
+lib/wordstream_client/keyword_tool.rb cccb7b84631dabb7f6fe892253a1d07c63260673

@@ -1,7 +1,7 @@
 ---
 http_interactions:
 - request:
-    method: get
+    method: post
     uri: http://api.wordstream.com/keywordtool/get_keyword_volumes?block_adult=false&keywords=apple%0Aipad%0Amacbook%20pro&session_id=user@example.com:m97ALqlCMcJDnWC8PN1l1sNt
     body:
       encoding: US-ASCII
