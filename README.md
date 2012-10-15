@@ -1,4 +1,4 @@
-# Wordstream API Gem
+# Wordstream API Gem [![Build Status](https://secure.travis-ci.org/mtchavez/wordstream_client.png)](http://travis-ci.org/mtchavez/wordstream_client?branch=master)
 
 A wrapper around the Wordstream API calls.
 
