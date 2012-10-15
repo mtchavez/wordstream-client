@@ -1,16 +1,9 @@
-# Wordstream API Gem [![Build Status](https://secure.travis-ci.org/mtchavez/wordstream_client.png)](http://travis-ci.org/mtchavez/wordstream_client?branch=master)
+# Wordstream API Gem [![Build Status](https://secure.travis-ci.org/mtchavez/wordstream-client.png)](http://travis-ci.org/mtchavez/wordstream-client?branch=master)
 
 A wrapper around the Wordstream API calls.
 
 * [Github](http://github.com/mtchavez/wordstream-client "Github Repo")
 * [Rubygems](https://rubygems.org/gems/wordstream-client "Rubygems Page")
-
-## Disclaimer
-
-The Wordstream API is constructed very poorly in my personal opinion. In addition to this I have had issues with it's
-reliability and usability. I take no responsibility for you using their service and I advise you use them 
-**at your own risk**. This library was written due to the lack of libraries for Ruby and due to the only one out there does
-not look maintained nor does it implement all the current endpoints available.
 
 ## Description
 
