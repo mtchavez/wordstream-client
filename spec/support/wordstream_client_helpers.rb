@@ -1,8 +1,10 @@
 module WordstreamClientHelpers
 
   def set_config(username='user@example.com', password='password')
-    WordstreamClient::Config.username = username
-    WordstreamClient::Config.password = password
+    WordstreamClient.configure do |config|
+      config.username = username
+      config.password = password
+    end
   end
 
   def login

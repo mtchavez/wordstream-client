@@ -1,47 +1,32 @@
 module WordstreamClient
 
+  ##
+  #
+  # Config class used internally for API calls
+
   class Config
 
-    class << self
-      attr_accessor :username, :password, :session_id
-    end
+    DEFAULT_HOST = 'http://api.wordstream.com'
+    DEFAULT_PORT = 80 # @private
 
-    # Instantiate new instance
+    attr_accessor :username, :password
+    attr_reader   :host, :port, :session_id # @private
+
+    ##
+    #
     # @private
 
-    def self.instantiate
-      new( :username => username, :password => password, :session_id => session_id )
+    def initialize
+      @host = DEFAULT_HOST
+      @port = DEFAULT_PORT
     end
 
-    def self.client
-      Client.new instantiate
-    end
+    ##
+    #
+    # @private
 
-    def initialize(options = {})
-      [:username, :password, :session_id].each do |var| 
-        instance_variable_set "@#{var}", options[var]
-      end
-    end
-
-    def username
-      @username
-    end
-
-    def password
-      @password
-    end
-
-    def session_id
-      @session_id
-    end
-
-    def session_id=(new_session)
-      instance_variable_set "@session_id", new_session
-      self.class.session_id = new_session
-    end
-
-    def default_host
-      'http://api.wordstream.com'
+    def set_session(session)
+      @session_id = session
     end
 
   end

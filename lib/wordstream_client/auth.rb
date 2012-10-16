@@ -1,5 +1,9 @@
 module WordstreamClient
 
+  ##
+  #
+  # Class used to log in and out of the Wordstream API
+
   class Auth
 
     def initialize(config)
