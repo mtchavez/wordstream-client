@@ -1,5 +1,0 @@
-lib/wordstream_client.rb e5eddefe092d5e4b3f493dba725f9cb8fa7c619b
-lib/wordstream_client/auth.rb 2c386da254bf957fda40cc555190354c96a905b1
-lib/wordstream_client/config.rb 3f654cd828a14a78e9bc135d2f160beb0778d25b
-lib/wordstream_client/exceptions.rb 8decf6db92e5c0a9a35ec957dc90f41c8c7be13b
-lib/wordstream_client/keyword_tool.rb 3a3096cdbd70d07fed934a0930fcaa411edf9c8d

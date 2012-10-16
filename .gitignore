@@ -14,3 +14,5 @@ coverage.data
 rdoc
 doc
 devnotes.md
+yardoc*
+yardoc/
