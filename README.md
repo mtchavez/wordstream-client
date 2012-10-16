@@ -15,18 +15,18 @@ is not implemented on any of the endpoints. This may change in the future if it 
 
     gem install wordstream_client
 
-## Setup
+## Configure
 
   To set up the gem you need to set your Wordstream username and password before making any API requests.
 
     require 'wordstream_client'
-    
-    WordstreamClient::Config.username = 'user@example.com'
-    WordstreamClient::Config.password = 'password'
+
+    WordstreamClient.configure do |config|
+      config.username = 'my.username@example.com'
+      config.password = 'my-secret-password'
+    end
 
 ## Authentication Endpoints
-
----
 
 ### Login
 
@@ -55,8 +55,6 @@ is not implemented on any of the endpoints. This may change in the future if it 
     total     = data['credits_per_month']
 
 ## Keyword Tool Endpoints
-
----
 
 ### Volumes
 
