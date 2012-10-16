@@ -1,6 +1,14 @@
 module WordstreamClient
 
+  ##
+  #
+  # Generic WordstreamClientError, inherits form StandardError
+
   class WordstreamClientError < ::StandardError; end
+
+  ##
+  #
+  # Raised when an error happens authenticating with Wordstream.
 
   class AuthError < WordstreamClientError
 
@@ -12,6 +20,10 @@ module WordstreamClient
     end
 
   end
+
+  ##
+  #
+  # Raised when an error with the Keyword Tool endpoint occurs.
 
   class KeywordToolError < WordstreamClientError
 

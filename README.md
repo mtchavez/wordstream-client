@@ -178,10 +178,10 @@ is not implemented on any of the endpoints. This may change in the future if it 
 
 ## Todo
 
-1. Make RDoc for gem.
-2. Handle potential errors better when making requests to Wordstream.
-3. Refactor HTTP requests.
-4. Make a Response class to be returned from API calls instead of parsed JSON.
+1. Handle potential errors better when making requests to Wordstream.
+2. Refactor HTTP requests.
+3. Make a Response class to be returned from API calls instead of parsed JSON.
+4. Implement callback parameter for api calls that allow for JSONP callback.
 
 ## License
 
