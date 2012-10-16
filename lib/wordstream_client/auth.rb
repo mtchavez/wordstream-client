@@ -3,39 +3,30 @@ module WordstreamClient
   ##
   #
   # Class used to log in and out of the Wordstream API
+  # and manage your API session.
 
   class Auth
 
-    def initialize(config)
-      @config = config
+    def self.config
+      WordstreamClient.config
     end
 
     def self.clear_session
-      Config.session_id = nil
-    end
-
-    def clear_session
-      self.class.clear_session
-      @config.session_id = nil if @config
+      config.clear_session!
     end
 
     def self.login
-      Config.client.auth.login
-    end
-
-    def login
       path  = '/authentication/login'
-      query = "?username=#{@config.username}&password=#{@config.password}"
-      resp  = RestClient.get(@config.default_host + path + query)
+      query = "?username=#{config.username}&password=#{config.password}"
+      resp  = RestClient.get(config.host + path + query)
       data  = JSON.parse resp.body
 
       raise AuthError.new('login', data['error']) if data.has_key?('error')
 
       session_id         = data['data']['session_id'] if data.has_key?('data')
-      Config.session_id  = session_id
-      @config.session_id = session_id
+      config.set_session(session_id) unless session_id.nil? or session_id.empty?
 
-      raise AuthError.new('login', 'Failed to get a session id from Wordstream.') if @config.session_id.nil?
+      raise AuthError.new('login', 'Failed to get a session id from Wordstream.') if config.session_id.nil?
 
       return data
     rescue JSON::ParserError => e
@@ -43,13 +34,9 @@ module WordstreamClient
     end
 
     def self.logout
-      Config.client.auth.logout
-    end
-
-    def logout
       path  = '/authentication/logout'
-      query = "?session_id=#{@config.session_id}"
-      resp  = RestClient.get(@config.default_host + path + query)
+      query = "?session_id=#{config.session_id}"
+      resp  = RestClient.get(config.host + path + query)
       data  = JSON.parse resp.body
 
       raise AuthError.new('logout', data['error']) if data.has_key?('error')
@@ -64,13 +51,9 @@ module WordstreamClient
     end
 
     def self.get_api_credits
-      Config.client.auth.get_api_credits
-    end
-
-    def get_api_credits
       path  = '/authentication/get_api_credits'
-      query = "?session_id=#{@config.session_id}"
-      resp  = RestClient.get(@config.default_host + path + query)
+      query = "?session_id=#{config.session_id}"
+      resp  = RestClient.get(config.host + path + query)
       data  = JSON.parse resp.body
 
       raise AuthError.new('get_api_credits', data['detail']) if data['code'].match(/error/i)

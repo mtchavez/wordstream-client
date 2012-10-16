@@ -2,30 +2,18 @@ require 'spec_helper'
 
 describe WordstreamClient::Auth do
 
-  let(:config) { WordstreamClient::Config.new }
-
-  describe 'initialize' do
-
-    it 'sets config' do
-      auth = WordstreamClient::Auth.new(config)
-      config = auth.instance_variable_get("@config")
-      config.should be_an_instance_of(WordstreamClient::Config)
-    end
-
-  end
+  let(:config) { WordstreamClient.config }
+  let(:auth)   { WordstreamClient::Auth }
 
   describe 'clear session' do
 
-    let(:auth) { WordstreamClient::Auth.new(config) }
-
     before do
-      config.session_id = '123xyz'
+      config.set_session '123xyz'
     end
 
     it 'sets session_id to nil' do
       auth.clear_session
-      WordstreamClient::Config.session_id.should be_nil
-      config.session_id.should be_nil
+      WordstreamClient.config.session_id.should be_nil
     end
 
   end
@@ -78,7 +66,7 @@ describe WordstreamClient::Auth do
 
         it 'sets session id on config class' do
           login
-          WordstreamClient::Config.session_id.should_not be_nil
+          WordstreamClient.config.session_id.should_not be_nil
         end
 
       end
@@ -102,7 +90,7 @@ describe WordstreamClient::Auth do
 
       it 'clears config session_id' do
         logout
-        WordstreamClient::Config.session_id.should be_nil
+        WordstreamClient.config.session_id.should be_nil
       end
 
       it 'returns hash from json response' do
@@ -124,7 +112,7 @@ describe WordstreamClient::Auth do
 
         it 'clears session id' do
           expect { logout }.should raise_error
-          WordstreamClient::Config.session_id.should be_nil
+          WordstreamClient.config.session_id.should be_nil
         end
 
       end
@@ -139,7 +127,7 @@ describe WordstreamClient::Auth do
 
         it 'clears session id' do
           expect { logout }.should raise_error
-          WordstreamClient::Config.session_id.should be_nil
+          WordstreamClient.config.session_id.should be_nil
         end
 
       end

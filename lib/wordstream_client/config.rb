@@ -29,6 +29,14 @@ module WordstreamClient
       @session_id = session
     end
 
+    ##
+    #
+    # @private
+
+    def clear_session!
+      @session_id = nil
+    end
+
   end
 
 end
