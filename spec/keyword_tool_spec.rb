@@ -2,34 +2,29 @@ require 'spec_helper'
 
 describe WordstreamClient::KeywordTool do
 
-  let(:config)   { WordstreamClient::Config.new }
+  let(:config)   { WordstreamClient.config }
   let(:keywords) { ['apple', 'ipad', 'macbook pro']  }
 
-  describe 'initialize' do
-
-    it 'sets config' do
-      kt = WordstreamClient::KeywordTool.new(config)
-      kt.instance_variable_get("@config").should be_an_instance_of(WordstreamClient::Config)
-    end
+  describe 'setup keywords' do
 
     it 'takes array of keywords and makes newline separated string' do
-      kt = WordstreamClient::KeywordTool.new(config, ['one','two','three'])
-      kt.keywords.should be_an_instance_of(String)
-      kt.keywords.should eql "one\ntwo\nthree"
+      keywords = WordstreamClient::KeywordTool.setup_keywords(['one','two','three'])
+      keywords.should be_an_instance_of(String)
+      keywords.should eql "one\ntwo\nthree"
     end
 
     it 'takes a string of keywords and sets ivar' do
-      keywords = "my fancy keyword\nwith another keyword"
-      kt = WordstreamClient::KeywordTool.new(config, keywords)
-      kt.keywords.should be_an_instance_of(String)
-      kt.keywords.should eql keywords
+      terms = "my fancy keyword\nwith another keyword"
+      keywords = WordstreamClient::KeywordTool.setup_keywords(terms)
+      keywords.should be_an_instance_of(String)
+      keywords.should eql keywords
     end
 
     it 'sets max keyword length to 3950' do
-      keywords = []
-      1.upto(4000) { |i| keywords << "keyword #{i}"}
-      kt = WordstreamClient::KeywordTool.new(config, keywords)
-      kt.keywords.length.should eql 3950
+      terms = []
+      1.upto(4000) { |i| terms << "keyword #{i}"}
+      keywords = WordstreamClient::KeywordTool.setup_keywords(terms)
+      keywords.length.should eql 3950
     end
 
   end

@@ -3,7 +3,6 @@ require 'spec_helper'
 describe WordstreamClient::Config do
 
   it 'can set session id' do
-    WordstreamClient.config.session_id.should be_nil
     WordstreamClient.config.set_session('my-session-id')
     WordstreamClient.config.session_id.should eql 'my-session-id'
   end
