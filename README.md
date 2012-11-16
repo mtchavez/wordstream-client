@@ -4,6 +4,7 @@ A wrapper around the Wordstream API calls.
 
 * [Github](http://github.com/mtchavez/wordstream-client "Github Repo")
 * [Rubygems](https://rubygems.org/gems/wordstream-client "Rubygems Page")
+* [![endorse](http://api.coderwall.com/mtchavez/endorsecount.png)](http://coderwall.com/mtchavez)
 
 ## Description
 
